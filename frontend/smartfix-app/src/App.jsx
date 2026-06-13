@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 // ─── CONFIG (replace with your deployed backend URL) ───────
 const API_BASE = "https://your-backend.railway.app"; // ← change this
@@ -83,7 +83,7 @@ export default function SmartFix() {
   });
 
   const go = (p) => { setPage(p); window.scrollTo(0,0); };
-  const set = (k, v) => setState(s => ({...s, [k]: v}));
+  const set = useCallback((k, v) => setState(s => ({...s, [k]: v})), []);
 
   // Nav
   const NavBar = () => (
