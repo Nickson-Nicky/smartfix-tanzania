@@ -49,7 +49,7 @@ const tomorrow = () => { const d = new Date(); d.setDate(d.getDate()+1); return 
 const inputStyle = {
   width:"100%", padding:".75rem", border:"1.5px solid #dde8f0",
   borderRadius:8, fontSize:"1rem", fontFamily:"'DM Sans',sans-serif",
-  outline:"none", boxSizing:"border-box", background:"#fff",
+  outline:"none", boxSizing:"border-box", background:"#fff",color:"#000",
 };
 
 export default function SmartFix() {
