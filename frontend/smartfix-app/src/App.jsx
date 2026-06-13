@@ -77,10 +77,12 @@ export default function SmartFix() {
   const [page, setPage]         = useState("home");   // home | booking | tracking | admin
   const [toast, showToast]      = useToast();
   const [step, setStep]         = useState(1);
-  const [state, setState]       = useState({
+ const [state, setState]       = useState({
     device: null, tech: null, problem: "", date: tomorrow(),
     payment: null, trackingId: null, userPhone: "", userName: "",
   });
+  const [userPhone, setUserPhone] = useState("");
+  const [userName, setUserName] = useState("");
 
   const go = (p) => { setPage(p); window.scrollTo(0,0); };
   const set = useCallback((k, v) => setState(s => ({...s, [k]: v})), []);
