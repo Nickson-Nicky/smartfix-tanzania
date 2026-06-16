@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from "react";
+import USSDDemo from "./SmartFix_USSD_Demo";
 
 const C = {
   navy: "#0A1931", blue: "#1A5276", accent: "#F39C12",
@@ -85,7 +86,7 @@ export default function SmartFix() {
         ⚙️ SmartFix <span style={{color:"#fff",fontWeight:300,fontSize:".85rem"}}>Tanzania</span>
       </div>
       <div style={{ display:"flex", gap:4 }}>
-        {[["home","Home"],["booking","Book"],["tracking","Track"],["admin","Admin"]].map(([id,label]) => (
+        {[["home","Home"],["booking","Book"],["tracking","Track"],["admin","Admin"],["ussd","USSD Pay"]].map(([id,label]) => (
           <button key={id} onClick={() => { go(id); if(id==="booking") setStep(1); }}
             style={{ background:page===id?"rgba(255,255,255,.12)":"transparent",
               border:"none", color:page===id?"#fff":"#94b5cc",
@@ -137,6 +138,7 @@ export default function SmartFix() {
       )}
       {page==="tracking" && <TrackingPage showToast={showToast} />}
       {page==="admin"    && <AdminPage />}
+{page==="ussd"     && <USSDDemo />}
 
       <footer style={{ background:"#060e1a", color:"#5a7a8a", textAlign:"center",
         padding:"1.5rem", fontSize:".82rem", borderTop:"1px solid rgba(255,255,255,.05)" }}>
